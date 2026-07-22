@@ -1,4 +1,4 @@
-import { generateMindmap } from "./services/gemini.services";
+import { generateMindmap } from "./services/gemini.services.js";
 
 async function main() {
     try {
