@@ -1,11 +1,8 @@
 import { Router } from "express";
+import { createMindmap } from "../controllers/mindmap.controller.js";
 
 const router = Router();
 
-router.post("/", (req, res) => {
-    res.json({
-        message: "Mindmap endpoint works!"
-    });
-});
+router.post("/", createMindmap);
 
 export default router;
