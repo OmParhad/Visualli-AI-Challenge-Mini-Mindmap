@@ -62,6 +62,9 @@ const response = await ai.models.generateContent({
   },
 });
 const raw = response.text;
+if (!raw) {
+    throw new Error("Empty response from Gemini API.");
+}
 const parsed = JSON.parse(raw);
 const mindmap = MindmapSchema.parse(parsed);
 
