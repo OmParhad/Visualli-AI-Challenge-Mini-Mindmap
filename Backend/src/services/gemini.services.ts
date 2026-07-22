@@ -1,9 +1,10 @@
 import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv";
-import { Mindmap, MindmapSchema } from "../vaildators/mindmap.schema.ts";
-import { mindmapPrompt } from "../prompts/mindmap.prompt.ts";
+import { Mindmap, MindmapSchema } from "../vaildators/mindmap.schema.js";
+import { mindmapPrompt } from "../prompts/mindmap.prompt.js";
 
 dotenv.config();
+
 const apiKey = process.env.GEMINI_API_KEY;
 
 if (!apiKey) {
@@ -65,10 +66,13 @@ const raw = response.text;
 if (!raw) {
     throw new Error("Empty response from Gemini API.");
 }
+console.log("Raw");
 const parsed = JSON.parse(raw);
 const mindmap = MindmapSchema.parse(parsed);
 
 return mindmap;
 }
 
+console.log("Current working directory:", process.cwd());
+console.log("API Key:", process.env.GEMINI_API_KEY);
 export default ai;
