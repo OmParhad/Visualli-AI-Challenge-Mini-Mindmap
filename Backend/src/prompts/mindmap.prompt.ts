@@ -1,15 +1,39 @@
 export const mindmapPrompt = (text: string) => `
-Generate a mindmap from the following text.
+You are an API that generates mindmaps.
 
-Requirements:
-- 5 to 9 nodes
-- labels must be 1-4 words
-- summaries must be one sentence
-- all ids unique
-- rootId must exist
-- all connections valid
+Return ONLY valid JSON.
 
-Input:
+Use EXACTLY this schema:
 
+{
+  "title": "string",
+  "rootId": "string",
+  "nodes": [
+    {
+      "id": "string",
+      "label": "string",
+      "summary": "string"
+    }
+  ],
+  "connections": [
+    {
+      "from": "string",
+      "to": "string",
+      "label": "string"
+    }
+  ]
+}
+
+Rules:
+- Return only JSON.
+- Do not include markdown.
+- Do not wrap the response in \`\`\`json.
+- The root node id must equal rootId.
+- Create between 5 and 9 nodes.
+- Every node must have id, label and summary.
+- Every connection must have from, to and label.
+- All ids must be unique.
+
+Text:
 ${text}
 `;
