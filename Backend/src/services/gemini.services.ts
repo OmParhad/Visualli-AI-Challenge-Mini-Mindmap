@@ -1,9 +1,14 @@
-import { GoogleGenAI } from "@google/genai";
+import process from "node:process";
 import dotenv from "dotenv";
+import { GoogleGenAI } from "@google/genai";
 import { Mindmap, MindmapSchema } from "../vaildators/mindmap.schema.js";
 import { mindmapPrompt } from "../prompts/mindmap.prompt.js";
 
 dotenv.config();
+
+console.log("Current working directory:", process.cwd());
+console.log("API Key:", process.env.GEMINI_API_KEY);
+
 
 const apiKey = process.env.GEMINI_API_KEY;
 
