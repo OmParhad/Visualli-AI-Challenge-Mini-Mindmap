@@ -68,12 +68,26 @@ const response = await ai.models.generateContent({
   },
 });
 const raw = response.text;
+
 if (!raw) {
     throw new Error("Empty response from Gemini API.");
 }
-console.log("Raw");
+
+// 👇 Add these logs
+console.log("========== RAW GEMINI RESPONSE ==========");
+console.log(raw);
+console.log("=========================================");
+
+
+
+// 👇 Add these logs too
 const parsed = JSON.parse(raw);
-const mindmap = MindmapSchema.parse(parsed);
+
+console.log("========== PARSED ==========");
+console.dir(parsed, { depth: null });
+
+// Stop here temporarily
+return parsed as any;
 
 return mindmap;
 }
