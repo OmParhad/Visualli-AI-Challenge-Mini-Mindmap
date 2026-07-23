@@ -1,12 +1,21 @@
+import "./App.css";
 import { useState } from "react";
 import { generateMindmap } from "./services/api";
 import type { Mindmap } from "./types/mindmap";
+
+import MindmapDiagram from "./components/Mindmapdiagram";
+import SummaryPanel from "./components/SummaryPanel";
 
 function App() {
   const [text, setText] = useState("");
   const [loading, setLoading] = useState(false);
   const [mindmap, setMindmap] = useState<Mindmap | null>(null);
   const [error, setError] = useState("");
+
+  const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
+
+  const selectedNode =
+    mindmap?.nodes.find((node) => node.id === selectedNodeId) ?? null;
 
   const handleGenerate = async () => {
     if (!text.trim()) return;
@@ -16,7 +25,11 @@ function App() {
 
     try {
       const data = await generateMindmap(text);
+
+      console.log("Mindmap from backend:", data);
+
       setMindmap(data);
+      setSelectedNodeId(null);
     } catch (err) {
       console.error(err);
       setError("Failed to generate mindmap.");
@@ -26,18 +39,11 @@ function App() {
   };
 
   return (
-    <div
-      style={{
-        maxWidth: 900,
-        margin: "40px auto",
-        padding: 20,
-      }}
-    >
+    <div className="app">
       <h1>Mini Mindmap Generator</h1>
 
       <textarea
-        rows={12}
-        style={{ width: "100%" }}
+        rows={10}
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="Paste your document..."
@@ -54,8 +60,25 @@ function App() {
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 
+      {!loading && !mindmap && !error && (
+        <p style={{ marginTop: 20 }}>
+          No mindmap generated yet.
+        </p>
+      )}
+
       {mindmap && (
-        <pre>{JSON.stringify(mindmap, null, 2)}</pre>
+        <div className="workspace">
+          <div className="diagram">
+            <MindmapDiagram
+              mindmap={mindmap}
+              onNodeClick={setSelectedNodeId}
+            />
+          </div>
+
+          <div className="summary">
+            <SummaryPanel node={selectedNode} />
+          </div>
+        </div>
       )}
     </div>
   );
