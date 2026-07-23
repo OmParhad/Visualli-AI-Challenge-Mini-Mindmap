@@ -2,7 +2,7 @@
   "name": "visualli-ai-challenge-mini-mindmap",
   "version": "1.0.0",
   "private": true,
-   "type": "module",
+  "type": "module",
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "start": "node dist/server.js"
@@ -12,6 +12,7 @@
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "reactflow": "^11.11.4",
     "zod": "^4.4.3"
   },
   "devDependencies": {
