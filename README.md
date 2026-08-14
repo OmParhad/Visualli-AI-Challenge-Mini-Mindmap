@@ -13,7 +13,7 @@ Developed as part of the **Visualli AI Engineering Challenge**.
 
 
 <img width="1592" height="657" alt="Screenshot 2026-07-23 215229" src="https://github.com/user-attachments/assets/9dd98e6a-521e-4586-ae34-308f5739d343" />
-# Features
+## Features
 
 - Generate structured mind maps from plain text
 - AI-powered summarization using Gemini
@@ -26,7 +26,7 @@ Developed as part of the **Visualli AI Engineering Challenge**.
 
 ---
 
-# Tech Stack
+## Tech Stack
 
 ## Frontend
 
@@ -46,7 +46,7 @@ Developed as part of the **Visualli AI Engineering Challenge**.
 
 ---
 
-# Architecture
+## Architecture
 
 ```
                 User Input
@@ -71,7 +71,7 @@ Developed as part of the **Visualli AI Engineering Challenge**.
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```
 Mini-Mindmap
@@ -97,7 +97,7 @@ Mini-Mindmap
 
 ---
 
-# Installation
+## Installation
 
 ## Clone
 
@@ -150,7 +150,7 @@ http://localhost:5173
 
 ---
 
-# Design Decisions
+## Design Decisions
 
 This project was intentionally designed around a simple client-server architecture.
 
@@ -164,7 +164,7 @@ This separation keeps the application modular, maintainable, and easy to extend.
 
 ---
 
-# Error Handling
+## Error Handling
 
 The application gracefully handles:
 
@@ -177,7 +177,7 @@ The application gracefully handles:
 
 ---
 
-# Future Improvements
+## Future Improvements
 
 - Automatic graph layout using Dagre/ELK
 - Mindmap persistence
@@ -189,7 +189,7 @@ The application gracefully handles:
 
 ---
 
-# Learning Outcomes
+## Learning Outcomes
 
 Through this project, I gained practical experience with:
 
@@ -204,7 +204,7 @@ Through this project, I gained practical experience with:
 
 ---
 
-# License
+
 
 This project was developed for the **Visualli AI Engineering Challenge**.
 
