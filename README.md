@@ -9,10 +9,12 @@ Developed as part of the **Visualli AI Engineering Challenge**.
 ---
 
 ## Preview
+
+<img width="1592" height="657" alt="Screenshot 2026-07-23 215229" src="https://github.com/user-attachments/assets/9dd98e6a-521e-4586-ae34-308f5739d343" />
 <img width="1493" height="657" alt="Screenshot 2026-07-23 215321" src="https://github.com/user-attachments/assets/f4c16d79-1091-4201-bace-1d82bfe199ad" />
 
 
-<img width="1592" height="657" alt="Screenshot 2026-07-23 215229" src="https://github.com/user-attachments/assets/9dd98e6a-521e-4586-ae34-308f5739d343" />
+
 ## Features
 
 - Generate structured mind maps from plain text
