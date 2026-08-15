@@ -42,8 +42,8 @@ const nodes: Node[] = mindmap.nodes.map((node, index) => ({
   
 const edges: Edge[] = (mindmap.connections ?? []).map((edge, index) => ({
   id: String(index),
-  source: edge.from,
-  target: edge.to,
+  source: edge.source,
+  target: edge.target,
   label: edge.label,
   animated: true,
 }));
