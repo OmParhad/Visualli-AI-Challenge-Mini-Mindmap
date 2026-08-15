@@ -87,9 +87,7 @@ console.log("========== PARSED ==========");
 console.dir(parsed, { depth: null });
 
 // Stop here temporarily
-return parsed as any;
-
-return mindmap;
+return parsed as Mindmap;
 }
 
 console.log("Current working directory:", process.cwd());
