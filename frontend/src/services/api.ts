@@ -2,7 +2,7 @@ import axios from "axios";
 import type { Mindmap } from "../types/mindmap";
 
 const api = axios.create({
-  baseURL: https://ai-mini-mindmap.onrender.com,
+  baseURL: "https://ai-mini-mindmap.onrender.com/api",
 });
 
 export async function generateMindmap(text: string): Promise<Mindmap> {
