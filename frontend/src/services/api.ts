@@ -2,7 +2,7 @@ import axios from "axios";
 import type { Mindmap } from "../types/mindmap";
 
 const api = axios.create({
-  baseURL: "http://localhost:3000/api",
+  baseURL: import.meta.env.VITE_API_URL,
 });
 
 export async function generateMindmap(text: string): Promise<Mindmap> {
