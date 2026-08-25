@@ -13,6 +13,10 @@
     "@xyflow/react": "^12.11.3",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
+    "axios": "^1.11.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "reactflow": "^11.11.4"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
