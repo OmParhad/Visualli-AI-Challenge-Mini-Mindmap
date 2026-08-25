@@ -47,7 +47,11 @@ const edges: Edge[] = (mindmap.connections ?? []).map((edge, index) => ({
   source: edge.from,
   target: edge.to,
   label: edge.label,
-  animated: true,
+  type: "smoothstep",
+  style: {
+    stroke: "#64748b",
+    strokeWidth: 1.5,
+  },
 }));
 
   return (
