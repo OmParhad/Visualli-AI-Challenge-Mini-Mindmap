@@ -1,11 +1,13 @@
-import ReactFlow, {
+import {
   Background,
   Controls,
+  ReactFlow,
   type Node,
   type Edge,
-} from "reactflow";
+  type NodeMouseHandler,
+} from "@xyflow/react";
 
-import "reactflow/dist/style.css";
+import "@xyflow/react/dist/style.css";
 
 import type { Mindmap } from "../types/mindmap";
 
@@ -58,7 +60,7 @@ const edges: Edge[] = (mindmap.connections ?? []).map((edge, index) => ({
       <ReactFlow
         nodes={nodes}
         edges={edges}
-        onNodeClick={(_, node) => onNodeClick(node.id)}
+        onNodeClick={((_event, node) => onNodeClick(node.id)) as NodeMouseHandler}
         fitView
       >
         <Background />
