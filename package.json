@@ -2,8 +2,6 @@
   "dependencies": {
     "@xyflow/react": "^12.11.3",
     "axios": "^1.18.1"
-    "axios": "^1.18.1",
-    "reactflow": "^11.11.4"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^7.0.0",

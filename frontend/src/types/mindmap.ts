@@ -8,9 +8,6 @@ export interface MindmapConnection {
   from: string;
   to: string;
   label: string;
-  source: string;
-  target: string;
-  label?: string;
 }
 
 export interface Mindmap {

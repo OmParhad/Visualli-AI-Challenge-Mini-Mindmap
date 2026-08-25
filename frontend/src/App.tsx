@@ -39,7 +39,6 @@ function App() {
       setError(
         typeof message === "string" ? message : "Failed to generate mindmap."
       );
-      setError("Failed to generate mindmap.");
     } finally {
       setLoading(false);
     }

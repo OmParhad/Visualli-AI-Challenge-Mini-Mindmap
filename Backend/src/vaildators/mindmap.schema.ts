@@ -27,8 +27,6 @@ export const CreateMindmapSchema = z.object({
     .trim()
     .min(50, "Input is too short to generate a meaningful mindmap.")
     .max(15000, "Input is too long. Please provide a shorter document."),
-    .min(20, "Input is too short to summarize.")
-    .max(20000, "Input exceeds maximum allowed length."),
 });
 
 export type CreateMindmap = z.infer<typeof CreateMindmapSchema>;

@@ -2,7 +2,6 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import { ReactFlowProvider } from "@xyflow/react";
-import { ReactFlowProvider } from "reactflow";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
