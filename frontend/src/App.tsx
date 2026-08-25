@@ -1,4 +1,5 @@
 import "./App.css";
+import axios from "axios";
 import { useState } from "react";
 import { generateMindmap } from "./services/api";
 import type { Mindmap } from "./types/mindmap";
@@ -32,6 +33,12 @@ function App() {
       setSelectedNodeId(null);
     } catch (err) {
       console.error(err);
+      const message = axios.isAxiosError(err)
+        ? err.response?.data?.error
+        : null;
+      setError(
+        typeof message === "string" ? message : "Failed to generate mindmap."
+      );
       setError("Failed to generate mindmap.");
     } finally {
       setLoading(false);

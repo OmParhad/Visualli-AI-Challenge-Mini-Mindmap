@@ -5,6 +5,9 @@ export interface MindmapNode {
 }
 
 export interface MindmapConnection {
+  from: string;
+  to: string;
+  label: string;
   source: string;
   target: string;
   label?: string;

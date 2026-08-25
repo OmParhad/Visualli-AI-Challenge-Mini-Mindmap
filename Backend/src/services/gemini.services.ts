@@ -1,6 +1,7 @@
 import process from "node:process";
 import dotenv from "dotenv";
 import { GoogleGenAI } from "@google/genai";
+import { MindmapSchema, type Mindmap } from "../vaildators/mindmap.schema.js";
 import { Mindmap, MindmapSchema } from "../vaildators/mindmap.schema.js";
 import { mindmapPrompt } from "../prompts/mindmap.prompt.js";
 
@@ -73,6 +74,10 @@ if (!raw) {
     throw new Error("Empty response from Gemini API.");
 }
 
+const parsed = JSON.parse(raw);
+
+return MindmapSchema.parse(parsed);
+}
 // 👇 Add these logs
 console.log("========== RAW GEMINI RESPONSE ==========");
 console.log(raw);

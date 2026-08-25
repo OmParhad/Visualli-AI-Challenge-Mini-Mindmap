@@ -1,3 +1,13 @@
+import {
+  Background,
+  Controls,
+  ReactFlow,
+  type Node,
+  type Edge,
+  type NodeMouseHandler,
+} from "@xyflow/react";
+
+import "@xyflow/react/dist/style.css";
 import ReactFlow, {
   Background,
   Controls,
@@ -42,6 +52,8 @@ const nodes: Node[] = mindmap.nodes.map((node, index) => ({
   
 const edges: Edge[] = (mindmap.connections ?? []).map((edge, index) => ({
   id: String(index),
+  source: edge.from,
+  target: edge.to,
   source: edge.source,
   target: edge.target,
   label: edge.label,
@@ -58,6 +70,7 @@ const edges: Edge[] = (mindmap.connections ?? []).map((edge, index) => ({
       <ReactFlow
         nodes={nodes}
         edges={edges}
+        onNodeClick={((_event, node) => onNodeClick(node.id)) as NodeMouseHandler}
         onNodeClick={(_, node) => onNodeClick(node.id)}
         fitView
       >
@@ -66,4 +79,5 @@ const edges: Edge[] = (mindmap.connections ?? []).map((edge, index) => ({
       </ReactFlow>
     </div>
   );
+}
 }
