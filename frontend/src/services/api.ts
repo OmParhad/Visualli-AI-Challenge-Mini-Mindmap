@@ -3,6 +3,7 @@ import type { Mindmap } from "../types/mindmap";
 
 const api = axios.create({
   baseURL: "http://localhost:3000/api",
+  baseURL: "https://ai-mini-mindmap.onrender.com/api",
 });
 
 export async function generateMindmap(text: string): Promise<Mindmap> {
@@ -11,4 +12,5 @@ export async function generateMindmap(text: string): Promise<Mindmap> {
   });
 
   return response.data;
+}
 }

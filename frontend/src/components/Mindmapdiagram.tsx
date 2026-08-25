@@ -8,6 +8,14 @@ import {
 } from "@xyflow/react";
 
 import "@xyflow/react/dist/style.css";
+import ReactFlow, {
+  Background,
+  Controls,
+  type Node,
+  type Edge,
+} from "reactflow";
+
+import "reactflow/dist/style.css";
 
 import type { Mindmap } from "../types/mindmap";
 
@@ -46,6 +54,8 @@ const edges: Edge[] = (mindmap.connections ?? []).map((edge, index) => ({
   id: String(index),
   source: edge.from,
   target: edge.to,
+  source: edge.source,
+  target: edge.target,
   label: edge.label,
   animated: true,
 }));
@@ -61,6 +71,7 @@ const edges: Edge[] = (mindmap.connections ?? []).map((edge, index) => ({
         nodes={nodes}
         edges={edges}
         onNodeClick={((_event, node) => onNodeClick(node.id)) as NodeMouseHandler}
+        onNodeClick={(_, node) => onNodeClick(node.id)}
         fitView
       >
         <Background />
@@ -68,4 +79,5 @@ const edges: Edge[] = (mindmap.connections ?? []).map((edge, index) => ({
       </ReactFlow>
     </div>
   );
+}
 }
