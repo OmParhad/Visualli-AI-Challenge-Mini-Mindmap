@@ -14,6 +14,18 @@ export const createMindmap = async (req: Request, res: Response) => {
 
     const mindmap = await generateMindmap(result.data.text);
 
+export const createMindmap = async (req: Request, res: Response) => {
+  try {
+    const { text } = req.body;
+
+    if (!text) {
+      return res.status(400).json({
+        error: "Text is required",
+      });
+    }
+
+    const mindmap = await generateMindmap(text);
+
     return res.status(200).json(mindmap);
   } catch (error) {
     console.error(error);
